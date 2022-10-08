@@ -35,7 +35,7 @@ public:
     virtual Move play(const OthelloBoard &board);
 private:
 
-    int evaluateLeaf(OthelloBoard& board);
+    int evaluateLeaf(OthelloBoard& board, int pType);
     int alphaBeta(OthelloBoard& board, int ptype, int alpha, int beta, int depth);
     Coin myColor;
     Coin oppColor;
@@ -69,7 +69,7 @@ int MyBot::alphaBeta(OthelloBoard& board, int ptype, int alpha, int beta, int de
     Coin pColor = ptype == MAXPLAYER ? myColor : oppColor;
     
     if (depth == 0) {
-        return evaluateLeaf(board);
+        return evaluateLeaf(board, ptype);
     }
 
     list<Move> moves = board.getValidMoves(pColor);
@@ -91,7 +91,8 @@ int MyBot::alphaBeta(OthelloBoard& board, int ptype, int alpha, int beta, int de
                 bMove = *it;
             }
             if (value >= beta) {
-                return value;
+                // return value;
+                break;
             }
             alpha = max(value, alpha);
         }
@@ -108,7 +109,8 @@ int MyBot::alphaBeta(OthelloBoard& board, int ptype, int alpha, int beta, int de
             }
 
             if (value <= alpha) {
-                return value;
+                // return value;
+                break;
             }
             beta = min(value, beta);
         }
@@ -116,28 +118,46 @@ int MyBot::alphaBeta(OthelloBoard& board, int ptype, int alpha, int beta, int de
 
     if (depth == MAXDEPTH) {
         bestMove = bMove;
-    }
+    } 
     return value;
 }
 
-int MyBot::evaluateLeaf(OthelloBoard &board) {
-    int ans = 0;
+int MyBot::evaluateLeaf(OthelloBoard &board, int ptype) {
+    Coin color = ptype == MAXPLAYER ? myColor : oppColor;
+
+    /* static weight heuristic to cells */
+    int static_heuristic = 0;
     for(int i=0;i<BOARD_SIZE;++i) {
         for(int j=0;j<BOARD_SIZE;++j) {
             Coin col = board.get(i,j);
             if (col == myColor) {
-                ans += weights[i][j];
+                static_heuristic += weights[i][j];
             } else if (col == oppColor) {
-                ans -= weights[i][j];
+                static_heuristic -= weights[i][j];
             }
         }
     }
 
+    /* coin parity */
+    int parity = 0
     int diff = board.getBlackCount() - board.getRedCount();
     if (myColor == BLACK)
-        ans += diff;
+        parity += diff;
     else 
-        ans -= diff;
+        parity -= diff;
+    
+    /* mobility */
+    // actual mobility
+    double mobility = 0.0;
+    if (board.getValidMoves(myColor).size() + board.getValidMoves(other(myColor)).size() != 0) {
+        double n = (double) board.getValidMoves(myColor).size();
+        double m = (double) board.getValidMoves(other(myColor)).size();
+        mobility = (100.0*(n-m))/(n+m);
+    }
+    // potential mobility    
+
+    /* stability */
+    
     return ans;
 }
 
