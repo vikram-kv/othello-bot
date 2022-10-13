@@ -15,5 +15,5 @@ for line in f.readlines():
         if (s == my_color):
             wins += 1
         total += 1
-print(f'{my_color} won {wins} matches out of {total}')
+print(f'[STATS] {my_color} won {wins} matches out of {total}')
 f.close()
