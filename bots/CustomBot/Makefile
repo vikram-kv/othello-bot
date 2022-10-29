@@ -11,7 +11,7 @@ OUT = bot.so
 
 OBJS = $(BOT).o
 
-all: $(OUT) ; mv bot.so ../../so_bots/50.so
+all: $(OUT) ; cp bot.so ../../so_bots/50.so ; cp bot.so 17.so
 
 $(OUT): $(BOT).o $(ROOTDIR)lib/libOthello.so
 	$(CC) $(LDFLAGS) -shared $^ -o $@
