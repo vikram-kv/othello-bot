@@ -18,15 +18,12 @@ if(my_color!='red') and (my_color!='black'):
 print("MyBot  : " + str(bot_number))
 print("MyColor: " + str(my_color))
 
-for i in range(51):
+print(os.listdir('./so_bots/'))
+for f in os.listdir('./so_bots/'):
 
-    if(i==5 or i==4 or i==bot_number): # bad bots
-        continue
+    print(f'Playing as '+str(my_color)+ f' with {f} ...',end="\t")
 
-    print(f'Playing as '+str(my_color)+ f' with {i}.so ...',end="\t")
-
-
-    bot1 = f'./so_bots/{i}.so'
+    bot1 = f'./so_bots/{f}'
     bot2 = f'./so_bots/{bot_number}.so'
     if(my_color == "black"):
         bot2,bot1 = bot1, bot2
@@ -34,12 +31,12 @@ for i in range(51):
     # play!
     session = subprocess.Popen(['./bin/Desdemona', f'{bot1}', f'{bot2}'], stdout=PIPE, stderr=PIPE)
     stdout, stderr = session.communicate()
-    with open(f"stats/{my_color}/{i}", 'w') as file:
+    with open(f"stats/{my_color}/{f}.txt", 'w') as file:
         file.write(stderr.decode())
         file.write(stdout.decode())
 
     # who won?
-    session = subprocess.Popen(['python3', f'stats/stats.py', f'stats/{my_color}/{i}', f'{my_color}'], stdout=PIPE, stderr=PIPE)
+    session = subprocess.Popen(['python3', f'stats/stats.py', f'stats/{my_color}/{f}.txt', f'{my_color}'], stdout=PIPE, stderr=PIPE)
     stdout, stderr = session.communicate()
     print(stdout.decode(), flush=True)
 

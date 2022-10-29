@@ -10,6 +10,7 @@
 #include "OthelloPlayer.h"
 #include <cstdlib>
 #include <vector>
+#include <cmath>
 #define BOARD_SIZE 8
 #define MAXPLAYER 1
 #define MINPLAYER -1
@@ -35,8 +36,8 @@ public:
     virtual Move play(const OthelloBoard &board);
 private:
 
-    int evaluateLeaf(OthelloBoard& board);
-    int alphaBeta(OthelloBoard& board, int ptype, int alpha, int beta, int depth);
+    double evaluateLeaf(OthelloBoard& board, int pType);
+    double alphaBeta(OthelloBoard& board, int ptype, double alpha, double beta, int depth);
     Coin myColor;
     Coin oppColor;
     Move bestMove;
@@ -64,12 +65,12 @@ MyBot::MyBot(Turn turn) :
     oppColor = other(turn);
 }
 
-int MyBot::alphaBeta(OthelloBoard& board, int ptype, int alpha, int beta, int depth) {
+double MyBot::alphaBeta(OthelloBoard& board, int ptype, double alpha, double beta, int depth) {
     
     Coin pColor = ptype == MAXPLAYER ? myColor : oppColor;
     
-    if (depth == 0) {
-        return evaluateLeaf(board);
+    if (depth == 0) {   
+        return evaluateLeaf(board, ptype);
     }
 
     list<Move> moves = board.getValidMoves(pColor);
@@ -78,20 +79,21 @@ int MyBot::alphaBeta(OthelloBoard& board, int ptype, int alpha, int beta, int de
         return alphaBeta(board, -ptype, alpha, beta, depth - 1);
     }
 
-    int value;
+    double value;
     Move bMove(-1,-1);
     if (ptype == MAXPLAYER) {
         value = NINF;
         for(auto it = moves.begin(); it != moves.end(); ++it) {
             OthelloBoard bcopy = board;
             bcopy.makeMove(pColor,*it);
-            int moveValue = alphaBeta(bcopy, -ptype, alpha, beta, depth - 1);
+            double moveValue = alphaBeta(bcopy, -ptype, alpha, beta, depth - 1);
             if (moveValue > value) {
                 value = moveValue;
                 bMove = *it;
             }
             if (value >= beta) {
-                return value;
+                // return value;
+                break;
             }
             alpha = max(value, alpha);
         }
@@ -100,7 +102,7 @@ int MyBot::alphaBeta(OthelloBoard& board, int ptype, int alpha, int beta, int de
         for(auto it = moves.begin(); it != moves.end(); ++it) {
             OthelloBoard bcopy = board;
             bcopy.makeMove(pColor,*it);
-            int moveValue = alphaBeta(bcopy, -ptype, alpha, beta, depth - 1);
+            double moveValue = alphaBeta(bcopy, -ptype, alpha, beta, depth - 1);
             
             if (moveValue < value) {
                 value = moveValue;
@@ -108,7 +110,8 @@ int MyBot::alphaBeta(OthelloBoard& board, int ptype, int alpha, int beta, int de
             }
 
             if (value <= alpha) {
-                return value;
+                // return value;
+                break;
             }
             beta = min(value, beta);
         }
@@ -116,29 +119,60 @@ int MyBot::alphaBeta(OthelloBoard& board, int ptype, int alpha, int beta, int de
 
     if (depth == MAXDEPTH) {
         bestMove = bMove;
-    }
+    } 
     return value;
 }
 
-int MyBot::evaluateLeaf(OthelloBoard &board) {
-    int ans = 0;
+double MyBot::evaluateLeaf(OthelloBoard &board, int ptype) {
+    Coin color = ptype == MAXPLAYER ? myColor : oppColor;
+
+    /* static weight heuristic to cells */
+    int static_heuristic = 0;
     for(int i=0;i<BOARD_SIZE;++i) {
         for(int j=0;j<BOARD_SIZE;++j) {
             Coin col = board.get(i,j);
             if (col == myColor) {
-                ans += weights[i][j];
+                static_heuristic += weights[i][j];
             } else if (col == oppColor) {
-                ans -= weights[i][j];
+                static_heuristic -= weights[i][j];
             }
         }
     }
 
-    int diff = board.getBlackCount() - board.getRedCount();
+    /* coin parity */
+    double parity = 0;
+    double diff = 100*((double)(board.getBlackCount() - board.getRedCount()))/((double)(board.getBlackCount() + board.getRedCount()));
     if (myColor == BLACK)
-        ans += diff;
+        parity += diff;
     else 
-        ans -= diff;
-    return ans;
+        parity -= diff;
+    
+    /* mobility */
+    // actual mobility
+    double mobility = 0.0;
+    if (board.getValidMoves(myColor).size() + board.getValidMoves(other(myColor)).size() != 0) {
+        double n = (double) board.getValidMoves(myColor).size();
+        double m = (double) board.getValidMoves(other(myColor)).size();
+        mobility = (100.0*(n-m))/(n+m);
+    }
+    // potential mobility    
+
+    /* corners captured */
+    int myTiles = 0, oppTiles = 0;
+    board.get(0,0) != EMPTY && board.get(0,0) == color ? myTiles++ : oppTiles++;  
+    board.get(0,7) != EMPTY && board.get(0,7) == color ? myTiles++ : oppTiles++;  
+    board.get(7,0) != EMPTY && board.get(7,0) == color ? myTiles++ : oppTiles++;  
+    board.get(7,7) != EMPTY && board.get(7,7) == color ? myTiles++ : oppTiles++;  
+    double corner_heuristic =0;
+    if(myTiles + oppTiles > 0){
+        corner_heuristic = 25.0 * ((double)(myTiles - oppTiles));
+    }
+
+
+    /* stability */
+
+    double score = 10.1*parity + 801.1*corner_heuristic + 78.1*mobility;
+    return score;
 }
 
 Move MyBot::play(const OthelloBoard &board)

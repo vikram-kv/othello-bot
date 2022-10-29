@@ -1,0 +1,14 @@
+Loading libOthello...
+Loading bot...
+Loading bot...
+Elapsed: 0.065221302 seconds
+Elapsed: 0.074156931 seconds
+Elapsed: 0.220879705 seconds
+Elapsed: 0.588992782 seconds
+Elapsed: 0.986545826 seconds
+Elapsed: 1.225704967 seconds
+Elapsed: 1.531493678 seconds
+[Timeout]: Black
+10
+8
+TO1

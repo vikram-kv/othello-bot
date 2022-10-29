@@ -17,20 +17,17 @@ else:
     print("Invalid color",flush=True)
     sys.exit(0)
 wins = 0
-total = 0
+loss = 0
 for line in f.readlines():
-    if (line[:5] == "[Win]"):
-        s = line.split(':')[1].strip()
-        if (s.lower() == my_color):
-            wins += 1
-        total += 1
-if(total==1):
-    if wins>0:
-        print(f'[Win ]: {my_color}', flush=True)
-    else:
-        print(f'[Win ]: {other_color}', flush=True)
-elif total>0:
-    print(f'[STATS] {my_color} won {wins} matches out of {total}', flush=True)
+    if (line.find(f'[Win]: {my_color}') != -1):
+        wins = 1
+    if (line.find(f'[Win]: {other_color}') != -1):
+        loss = 1
+if wins > 0:
+    print(f'{my_color} WINS')
+elif loss > 0:
+    print(f'{other_color} WINS')
 else:
-    print(f'No winner')
+    print('DRAW')
+
 f.close()
