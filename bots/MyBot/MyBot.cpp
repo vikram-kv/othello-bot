@@ -162,7 +162,7 @@ double MyBot::evaluateLeaf(OthelloBoard &board, int ptype) {
 
     /* stability */
 
-    double score = 10 * parity + 801.1 * corner_heuristic + 79.1 * mobility + 10.0 * (static_heuristic);
+    double score = 10 * parity + 801.1 * corner_heuristic + 79.1 * mobility + 10.0 * static_heuristic;
     return score;
 }
 
