@@ -6,32 +6,33 @@ Current evaluation: -4384.56
 Current evaluation: 9058.31
 Current evaluation: -207.6
 Current evaluation: 4779.7
-Current evaluation: 430.323
-Current evaluation: 9973.53
-Current evaluation: 5394.09
-Current evaluation: 9817.53
-Current evaluation: 5697.43
-Current evaluation: 16056.1
-Current evaluation: 16888.1
-Current evaluation: 14989.4
-Current evaluation: -5860.68
-Current evaluation: -5986.54
-Current evaluation: -4821.53
-Current evaluation: 12642.2
-Current evaluation: 13655
-Current evaluation: 14646.8
-Current evaluation: 11203
-Current evaluation: 11463.3
-Current evaluation: 12053
-Current evaluation: 12209.6
-Current evaluation: 18322.2
-Current evaluation: 17228.9
-Current evaluation: 23137
-Current evaluation: 22260.1
-Current evaluation: 18329.2
-Current evaluation: 24485.8
+Current evaluation: 321.491
+Current evaluation: 4524
+Current evaluation: 8562.42
+Current evaluation: 9443.8
+Current evaluation: 19320.9
+Current evaluation: 23926.2
+Current evaluation: 23738.6
+Current evaluation: 28287.9
+Current evaluation: 19791.2
+Current evaluation: 28865.7
+Current evaluation: 28837.6
+Current evaluation: 34271
+Current evaluation: 38765.1
+Current evaluation: 54483.6
+Current evaluation: 74654.1
+Current evaluation: 70464.5
+Current evaluation: 70600.6
+Current evaluation: 81151
+Current evaluation: 81362.5
+Current evaluation: 72826.4
+Current evaluation: 77133.7
+Current evaluation: 81755.1
+Current evaluation: 72116.2
+Current evaluation: 71640.4
+Current evaluation: 77204.6
 Game Over
 [Win]: Black
-39
-24
+49
 15
+34

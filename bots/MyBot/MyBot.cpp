@@ -84,17 +84,16 @@ double MyBot::alphaBeta(OthelloBoard &board, int ptype, double alpha, double bet
             OthelloBoard bcopy = board;
             bcopy.makeMove(pColor, *it);
             double moveValue = alphaBeta(bcopy, -ptype, alpha, beta, depth - 1);
-            if (moveValue > value && depth == MAXDEPTH) {
+            if (moveValue > value) {
                 value = moveValue;
-                bestMove = *it;
+                if (depth == MAXDEPTH)
+                    bestMove = *it;
             }
 
-            alpha = max(moveValue, alpha);
-            if ( beta <= alpha) {
-                return beta;
-            }
+            if (value >= beta) break;
+            alpha = max(value, alpha);
         }
-        return alpha;
+        
     } else {
         value = INF;
         for (auto it = moves.begin(); it != moves.end(); ++it) {
@@ -102,19 +101,17 @@ double MyBot::alphaBeta(OthelloBoard &board, int ptype, double alpha, double bet
             bcopy.makeMove(pColor, *it);
             double moveValue = alphaBeta(bcopy, -ptype, alpha, beta, depth - 1);
 
-            if (moveValue < value && depth == MAXDEPTH) {
+            if (moveValue < value) {
                 value = moveValue;
-                bestMove = *it;
+                if (depth == MAXDEPTH)
+                    bestMove = *it;
             }
-
-            beta = min(moveValue, beta);
-            if (beta <= alpha) {
-                // return value;
-                return alpha;
-            }
+            
+            if (value <= alpha) break;
+            beta = min(value, beta);
         }
-        return beta;
     }
+    return value;
 }
 
 double MyBot::evaluateLeaf(OthelloBoard &board, int ptype) {

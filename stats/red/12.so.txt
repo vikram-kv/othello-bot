@@ -3,6 +3,6 @@ Loading bot...
 Loading bot...
 Game Over
 [Win]: Black
-39
-25
-14
+43
+21
+22

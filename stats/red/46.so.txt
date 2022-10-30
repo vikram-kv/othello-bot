@@ -1,0 +1,36 @@
+Loading libOthello...
+Loading bot...
+Loading bot...
+Elapsed: 0.002756445 seconds
+Elapsed: 0.006946373 seconds
+Elapsed: 0.010411162 seconds
+Elapsed: 0.021583020 seconds
+Elapsed: 0.018141916 seconds
+Elapsed: 0.016944888 seconds
+Elapsed: 0.027665183 seconds
+Elapsed: 0.031785027 seconds
+Elapsed: 0.013094038 seconds
+Elapsed: 0.038822953 seconds
+Elapsed: 0.014171818 seconds
+Elapsed: 0.007227664 seconds
+Elapsed: 0.016797610 seconds
+Elapsed: 0.005169512 seconds
+Elapsed: 0.005388282 seconds
+Elapsed: 0.005114273 seconds
+Elapsed: 0.002070351 seconds
+Elapsed: 0.002642669 seconds
+Elapsed: 0.001841422 seconds
+Elapsed: 0.003274995 seconds
+Elapsed: 0.005312331 seconds
+Elapsed: 0.008151147 seconds
+Elapsed: 0.004077229 seconds
+Elapsed: 0.000870611 seconds
+Elapsed: 0.000520998 seconds
+Elapsed: 0.000140324 seconds
+Elapsed: 0.000017361 seconds
+Elapsed: 0.000012210 seconds
+Game Over
+[Win]: Red
+15
+49
+-34
