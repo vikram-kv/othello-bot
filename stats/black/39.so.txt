@@ -1,0 +1,38 @@
+Loading libOthello...
+Loading bot...
+Loading bot...
+Current evaluation: 5191.68
+Current evaluation: 4639.71
+Current evaluation: 83.4205
+Current evaluation: 8325.13
+Current evaluation: 8299.7
+Current evaluation: 9225.99
+Current evaluation: 9196.37
+Current evaluation: 4762.86
+Current evaluation: 10297.1
+Current evaluation: 10760.8
+Current evaluation: 10754.7
+Current evaluation: 10805.7
+Current evaluation: 9827.66
+Current evaluation: 9848.53
+Current evaluation: 11606.9
+Current evaluation: 10996.3
+Current evaluation: 10197.7
+Current evaluation: 9409.14
+Current evaluation: 15750.3
+Current evaluation: 20748.3
+Current evaluation: 18623.4
+Current evaluation: -6307.46
+Current evaluation: -709.086
+Current evaluation: -1274.1
+Current evaluation: 15057
+Current evaluation: 3840.25
+Current evaluation: 23203.5
+Current evaluation: 20214
+Current evaluation: 27097.6
+Current evaluation: 30597.8
+Game Over
+[Win]: Red
+19
+45
+-26

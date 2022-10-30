@@ -1,23 +1,24 @@
 Loading libOthello...
 Loading bot...
 Loading bot...
-Elapsed: 0.066580240 seconds
-Elapsed: 0.048540000 seconds
-Elapsed: 0.074626429 seconds
-Elapsed: 0.216946383 seconds
-Elapsed: 0.229672835 seconds
-Elapsed: 0.458242996 seconds
-Elapsed: 0.280964650 seconds
-Elapsed: 0.332585928 seconds
-Elapsed: 0.353352744 seconds
-Elapsed: 0.762343203 seconds
-Elapsed: 0.868468087 seconds
-Elapsed: 1.345546714 seconds
-Elapsed: 1.602889759 seconds
-Elapsed: 1.195104302 seconds
-Elapsed: 1.391048928 seconds
-Elapsed: 1.448595000 seconds
+Elapsed: 0.051373552 seconds
+Elapsed: 0.052689830 seconds
+Elapsed: 0.080181437 seconds
+Elapsed: 0.235828108 seconds
+Elapsed: 0.252099717 seconds
+Elapsed: 0.533340234 seconds
+Elapsed: 0.287568347 seconds
+Elapsed: 0.352335855 seconds
+Elapsed: 0.372478670 seconds
+Elapsed: 0.818601245 seconds
+Elapsed: 0.926308957 seconds
+Elapsed: 1.335385304 seconds
+Elapsed: 1.687195286 seconds
+Elapsed: 1.145042911 seconds
+Elapsed: 1.434824627 seconds
+Elapsed: 1.210267279 seconds
+Elapsed: 1.654019315 seconds
 [Timeout]: Black
-24
-12
+22
+16
 TO1

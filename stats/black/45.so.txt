@@ -2,7 +2,7 @@ Loading libOthello...
 Loading bot...
 Loading bot...
 Game Over
-[Win]: Red
-16
+[Win]: Black
+56
+8
 48
--32

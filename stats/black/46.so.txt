@@ -1,0 +1,35 @@
+Loading libOthello...
+Loading bot...
+Loading bot...
+Elapsed: 0.003639215 seconds
+Elapsed: 0.008175895 seconds
+Elapsed: 0.025845002 seconds
+Elapsed: 0.016024822 seconds
+Elapsed: 0.037383914 seconds
+Elapsed: 0.044963417 seconds
+Elapsed: 0.021972194 seconds
+Elapsed: 0.025115045 seconds
+Elapsed: 0.016706183 seconds
+Elapsed: 0.007732724 seconds
+Elapsed: 0.006651786 seconds
+Elapsed: 0.007130881 seconds
+Elapsed: 0.006254001 seconds
+Elapsed: 0.015748954 seconds
+Elapsed: 0.011922200 seconds
+Elapsed: 0.009066174 seconds
+Elapsed: 0.001710641 seconds
+Elapsed: 0.001304805 seconds
+Elapsed: 0.001365309 seconds
+Elapsed: 0.003079992 seconds
+Elapsed: 0.007063103 seconds
+Elapsed: 0.005308595 seconds
+Elapsed: 0.001936709 seconds
+Elapsed: 0.000811199 seconds
+Elapsed: 0.000043041 seconds
+Elapsed: 0.000020021 seconds
+Elapsed: 0.000012093 seconds
+Game Over
+[Win]: Black
+56
+8
+48

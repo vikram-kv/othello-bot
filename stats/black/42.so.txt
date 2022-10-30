@@ -1,8 +1,7 @@
 Loading libOthello...
 Loading bot...
 Loading bot...
-Game Over
-[Win]: Red
-16
-48
--32
+[Invalid Move]: Red
+50
+12
+DQ2
