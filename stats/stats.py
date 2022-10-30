@@ -16,18 +16,14 @@ elif my_color.lower() == 'black':
 else:
     print("Invalid color",flush=True)
     sys.exit(0)
-wins = 0
-loss = 0
-for line in f.readlines():
-    if (line.find(f'[Win]: {my_color}') != -1):
-        wins = 1
-    if (line.find(f'[Win]: {other_color}') != -1):
-        loss = 1
-if wins > 0:
-    print(f'{my_color} WINS')
-elif loss > 0:
-    print(f'{other_color} WINS')
-else:
-    print('DRAW')
 
+figures = ''
+flag = False
+for line in f.readlines():
+    if (line.find(f'Win') != -1 or line.find('Draw') != -1 or line.find('Timeout') != -1):
+        flag = True
+    if flag:
+        figures += line
+
+print('\n'+figures)
 f.close()

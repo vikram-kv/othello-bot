@@ -3,6 +3,6 @@ Loading bot...
 Loading bot...
 Game Over
 [Win]: Red
-20
-44
--24
+11
+53
+-42

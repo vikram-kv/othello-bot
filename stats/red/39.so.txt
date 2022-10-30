@@ -4,35 +4,34 @@ Loading bot...
 Current evaluation: 0
 Current evaluation: -4384.56
 Current evaluation: 9058.31
-Current evaluation: -207.6
-Current evaluation: 4779.7
-Current evaluation: 321.491
-Current evaluation: 4524
-Current evaluation: 8562.42
-Current evaluation: 9443.8
-Current evaluation: 19320.9
-Current evaluation: 23926.2
-Current evaluation: 23738.6
-Current evaluation: 28287.9
-Current evaluation: 19791.2
-Current evaluation: 28865.7
-Current evaluation: 28837.6
-Current evaluation: 34271
-Current evaluation: 38765.1
-Current evaluation: 54483.6
-Current evaluation: 74654.1
-Current evaluation: 70464.5
-Current evaluation: 70600.6
-Current evaluation: 81151
-Current evaluation: 81362.5
-Current evaluation: 72826.4
-Current evaluation: 77133.7
-Current evaluation: 81755.1
-Current evaluation: 72116.2
-Current evaluation: 71640.4
-Current evaluation: 77204.6
+Current evaluation: 8817.32
+Current evaluation: -343.857
+Current evaluation: -561.279
+Current evaluation: -35.62
+Current evaluation: 463.105
+Current evaluation: -276.214
+Current evaluation: 9307.75
+Current evaluation: 4740.86
+Current evaluation: 5188.75
+Current evaluation: 9322.72
+Current evaluation: 13109.4
+Current evaluation: 9112.47
+Current evaluation: 13699.8
+Current evaluation: 12936.4
+Current evaluation: 17739
+Current evaluation: 17398.8
+Current evaluation: 21824.4
+Current evaluation: 22350.7
+Current evaluation: 27997.2
+Current evaluation: 23643.7
+Current evaluation: 27027.8
+Current evaluation: 26651.1
+Current evaluation: 31561.6
+Current evaluation: 13170.3
+Current evaluation: -18271
+Current evaluation: -17438
 Game Over
-[Win]: Black
-49
-15
-34
+[Win]: Red
+11
+51
+-40

@@ -2,7 +2,7 @@ Loading libOthello...
 Loading bot...
 Loading bot...
 Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Prune on time count = 0Game Over
-[Win]: Black
-46
-18
-28
+[Draw]
+32
+32
+0

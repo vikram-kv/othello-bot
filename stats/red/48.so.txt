@@ -1,8 +1,7 @@
 Loading libOthello...
 Loading bot...
 Loading bot...
-Game Over
-[Win]: Black
-34
-30
-4
+[Timeout]: Black
+23
+13
+TO1
